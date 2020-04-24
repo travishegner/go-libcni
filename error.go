@@ -18,7 +18,7 @@ type Error struct {
 //NewError generates a new CNIError
 func NewError(code int, message string) *Error {
 	return &Error{
-		Version: Version,
+		Version: CNIVersion,
 		Code:    code,
 		Message: message,
 	}
