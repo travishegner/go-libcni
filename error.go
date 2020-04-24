@@ -35,7 +35,7 @@ func NewDetailedError(code int, message, details string) *Error {
 func (e *Error) Marshal() []byte {
 	ebytes, err := json.Marshal(e)
 	if err != nil {
-		return []byte(fmt.Sprintf("{\"cniVersion\": \"%v\", \"code\": 99, \"msg\":\"error marshaling error\", \"details\":\"there was an error marshaling the original error\"}", Version))
+		return []byte(fmt.Sprintf("{\"cniVersion\": \"%v\", \"code\": 99, \"msg\":\"error marshaling error\", \"details\":\"there was an error marshaling the original error\"}", CNIVersion))
 	}
 
 	return ebytes

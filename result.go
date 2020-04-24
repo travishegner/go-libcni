@@ -47,7 +47,7 @@ type DNS struct {
 func (r *Result) Marshal() []byte {
 	ebytes, err := json.Marshal(r)
 	if err != nil {
-		return []byte(fmt.Sprintf("{\"cniVersion\": \"%v\", \"code\": 99, \"msg\":\"error marshaling result\", \"details\":\"there was an error marshaling the result to json\"}", Version))
+		return []byte(fmt.Sprintf("{\"cniVersion\": \"%v\", \"code\": 99, \"msg\":\"error marshaling result\", \"details\":\"there was an error marshaling the result to json\"}", CNIVersion))
 	}
 
 	return ebytes
