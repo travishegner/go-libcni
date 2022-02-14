@@ -3,8 +3,6 @@ package cni
 import (
 	"encoding/json"
 	"fmt"
-
-	log "github.com/sirupsen/logrus"
 )
 
 // Error represents the object we return to runtime in the case of a failure
@@ -44,9 +42,7 @@ func (e *Error) Marshal() []byte {
 //PrepareExit returns the error code and json bytes to be printed to stdout by the calling program
 func PrepareExit(err error, code int, message string) (int, []byte) {
 	if err == nil {
-		log.Error(message)
 		return code, NewError(code, message).Marshal()
 	}
-	log.WithError(err).Error(message)
 	return code, NewDetailedError(code, message, err.Error()).Marshal()
 }
