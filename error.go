@@ -29,7 +29,7 @@ func NewDetailedError(code int, message, details string) *Error {
 	return e
 }
 
-//Marshal marshals the error into a json string
+//Marshal marshals the error into a json byte array
 func (e *Error) Marshal() []byte {
 	ebytes, err := json.Marshal(e)
 	if err != nil {

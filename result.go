@@ -43,7 +43,7 @@ type DNS struct {
 	Options     []string `json:"options,omitempty"`
 }
 
-//Marshal marshals the error into a json string
+//Marshal marshals the result into a json byte array
 func (r *Result) Marshal() []byte {
 	ebytes, err := json.Marshal(r)
 	if err != nil {
